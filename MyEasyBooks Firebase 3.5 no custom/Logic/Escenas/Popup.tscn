@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Logic/Scripts de escenas/Popup.gd" type="Script" id=1]
+[ext_resource path="res://images/otros/whitebc.png" type="Texture" id=2]
+
+[node name="Pop_terminos" type="Popup"]
+margin_left = 18.0
+margin_top = 50.0
+margin_right = 291.0
+margin_bottom = 460.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -17.0
+margin_top = -7.0
+margin_right = 298.0
+margin_bottom = 433.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 30.05
+margin_top = 389.15
+margin_right = 228.05
+margin_bottom = 429.15
+size_flags_stretch_ratio = 0.0
+text = "CERRAR"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -137.5
+margin_top = -200.0
+margin_right = 9.0
+margin_bottom = 175.0
+scroll_horizontal_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+margin_right = 283.0
+margin_bottom = 375.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/HBoxContainer"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 283.0
+margin_bottom = 375.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "
+Objetivo del Sitio Web
+El presente contrato (en adelante el “Contrato”) describe los términos y condiciones generales (las “Condiciones Generales”) que regulan el uso de los contenidos y servicios que integran el sitio web www.BenderStore.com.ar (en adelante, el “Sitio Web”) que Bender pone a disposición de los usuarios de Internet (el “Usuario”).
+A través del Sitio Web, Bender facilita a los Usuarios el acceso y la utilización de diversos servicios y contenidos, que son puestos a disposición de los Usuarios, por Bender, por terceros usuarios del Sitio Web y/o por terceros proveedores de servicios y contenidos.
+ 
+Acceso y utilización del Sitio Web
+La utilización del Sitio Web atribuye la condición de usuario del mismo y expresa la aceptación plena y sin reservas del Usuario de todas y cada una de las Condiciones Generales en la versión publicada por Bender en el momento mismo en que el Usuario acceda al Sitio Web. En consecuencia, el Usuario debe leer atentamente las Condiciones Generales en cada una de las ocasiones en que se proponga utilizar el Sitio Web y cualquier Usuario que no acepte estas Condiciones Generales, las cuales tienen un carácter obligatorio y vinculante, deberá abstenerse de utilizar el Sitio Web y/o los servicios.
+
+Asimismo, la utilización de los distintos servicios ofrecidos en el Sitio Web (los “Servicios”) y del contenido incluido en el Sitio Web (el “Contenido”) se encuentra sometida igualmente a todos los avisos, reglamentos de uso e instrucciones puestos en conocimiento del Usuario por Bender, que completan lo previsto en estas Condiciones Generales en cuanto no se opongan a ellas.
+
+Bender se reserva el derecho a modificar unilateralmente, en cualquier momento y sin aviso previo, la presentación y configuración del Sitio Web, así como de los Servicios, del Contenido y/o las presentes Condiciones Generales.
+
+El Usuario se compromete a utilizar el Sitio Web, el Contenido y los Servicios de conformidad con la ley, estas Condiciones Generales, obligándose asimismo a:
+
+Abstenerse de utilizar el Sitio Web y los Servicios con fines o efectos ilícitos, contrarios a lo establecido en estas Condiciones Generales, lesivos de los derechos e intereses de terceros, o que de cualquier forma puedan dañar, inutilizar, sobrecargar o deteriorar el Sitio Web y los Servicios o impedir la normal utilización o disfrute del Sitio Web y de los Servicios por parte de los Usuarios.
+Usar los contenidos del Sitio Web de forma diligente, correcta y lícita y, en particular, se compromete a abstenerse de (a) utilizar los contenidos de forma, con fines o efectos contrarios a la ley, a la moral y a las buenas costumbres generalmente aceptadas o al orden público; (b) reproducir o copiar, distribuir, permitir el acceso del público a través de cualquier modalidad de comunicación pública, transformar o modificar los Contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido; (c) suprimir, eludir o manipular el copyright y demás datos identificativos de los derechos de Bender o de sus titulares incorporados a los Contenidos, así como los dispositivos técnicos de protección, o cualesquiera mecanismos de información que pudieren contener los contenidos.
+En virtud de lo establecido precedentemente, el Usuario es consciente de y acepta voluntariamente que el uso del Sitio Web, de los Servicios y de los Contenidos tiene lugar, en todo caso, bajo su única y exclusiva responsabilidad.
+
+Bender se reserva el derecho a denegar o retirar el acceso al Sitio Web y/o a los Servicios, en cualquier momento y sin necesidad de preaviso, a aquellos Usuarios que incumplan estas Condiciones Generales.
+
+Registración
+En consideración con el uso del Servicio, el Usuario deberá ingresar toda la información requerida en el Sitio Web. En consecuencia, el Usuario declara y garantiza a Bender que toda la información que suministre, así como cualquier otro tipo de información que Bender le requiera es y será exacta, actual y verdadera y se suministrará de manera completa, comprometiéndose asimismo a mantener actualizada la información suministrada.
+
+El Usuario es responsable de toda afirmación realizada, operaciones efectuadas o acto ocurrido mediante el uso de su nombre de usuario y contraseña, pues el acceso a su cuenta está restringido al ingreso y uso de contraseña, de conocimiento exclusivo del Usuario. Bender se reserva el derecho de rechazar cualquier solicitud de registración o de cancelar una registración previamente aceptada, sin que esté obligado a comunicar o exponer las razones de su decisión y sin que ello genere algún derecho a indemnización o resarcimiento.
+
+El Usuario se compromete a notificar inmediatamente cualquier uso no autorizado de su registración. Bender no será responsable de los daños o pérdidas derivados del incumplimiento por parte del Usuario de las reglas contenidas en este apartado.
+
+Bender podrá utilizar la información que obtenga a través de la registración para desarrollar la actividad objeto del Sitio Web. En consecuencia, el Usuario, al insertar sus datos a la base de datos del Sitio Web, expresamente autoriza a Bender a revelar dicha información a terceras partes por motivos relacionados con los Servicios ofrecidos en el Sitio Web.
+
+Toda información suministrada por el Usuario, se usará de acuerdo a las Políticas de Privacidad de Bender. El usuario deberá revisar las Políticas de Privacidad de Bender, las cuales hacen parte integral del presente Contrato.
+
+Propiedad intelectual
+El Contenido del Sitio Web, que incluye textos, gráficos, diseños, software y programación utilizados y/o exhibidos en el Sitio Web, es exclusiva propiedad de Bender, y se encuentra protegido por normas locales y tratados internacionales.
+
+Bender no concede ninguna licencia o autorización de uso de ninguna clase sobre sus derechos de propiedad industrial e intelectual o sobre cualquier otra propiedad o derecho relacionado con el Sitio Web, los Servicios o los Contenidos.
+
+Exoneración y limitación de responsabilidad
+Informaciones y opiniones contenidas en el Sitio Web.
+Bender no asevera ni garantiza la veracidad, actualidad, exactitud o confiabilidad de las informaciones u opiniones incluidas en el Sitio Web ni en ningún Link que aparezca en el Sitio Web. Bender no será responsable de ninguna decisión que el Usuario realice luego de su visita al Sitio Web. La información contenida en el Sitio Web no implica ningún tipo de opinión sobre la seguridad o calidad de los distintos tipos de servicios y/o productos ofrecidos en el Sitio Web. Las opiniones, análisis y/o información del Sitio Web son proveídas al Usuario con el único fin de colaborar con los mismos a tomar sus propias decisiones y no pueden ser consideradas como recomendaciones de contratar un servicio en particular.
+
+Asimismo, Bender no garantiza ni asevera - a pesar de la diligencia puesta en su preparación- que la información del Sitio Web no contenga imprecisiones o errores. Bender no asume responsabilidad alguna que pudiera derivarse de la falta de veracidad, integridad, actualización y precisión de los datos o informaciones de cualquier naturaleza, incluyendo los relativos a ofertas, productos o servicios, precios, características y cualesquiera otros datos e informaciones relevantes acerca de los productos y servicios ofrecidos a través del Sitio Web por terceros proveedores de productos o servicios, ni respecto de los contenidos, datos o informaciones que sean proporcionados desde las páginas web de dichos terceros.
+
+Bender se reserva, a su discreción, el derecho a actualizar los contenidos del Sitio Web, a eliminarlos, limitarlos y a impedir el acceso a ellos, de manera temporal o definitiva.
+
+Funcionamiento del Sitio Web.
+Bender no garantiza que el Sitio Web funcionará permanentemente de la manera esperada y/o sin interrupciones, errores, defectos o imprecisiones. El Usuario reconoce y acepta que Bender no es responsable por la calidad en la transmisión, ni el tiempo que el Usuario demore en acceder al Sitio Web o a los servicios brindados, o a cualquier otra falla en las comunicaciones.
+
+En ninguna circunstancia Bender será responsable por cualquier daño (incluyendo, sin limitación, daño emergente, lucro cesante, o daños resultantes de perdida de datos, o interrupción de negocios) resultantes del uso o acceso a, o la imposibilidad de usar o acceder a, el Sitio Web, y/o sus Servicios, y/o su Contenido y/o cualquier documento.
+
+Generalidades
+
+Ley aplicable y jurisdicción
+Estas Condiciones Generales se rigen por las leyes de la República Argentina.
+
+Bender y el Usuario, con renuncia expresa a cualquier otro fuero, se someten a la jurisdicción de los Tribunales Ordinario de la Ciudad Autónoma de Buenos Aires (República Argentina) para cualquier controversia que pudiera derivarse de la prestación de los servicios objeto de estas Condiciones Generales.
+"
+scroll_following = true
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

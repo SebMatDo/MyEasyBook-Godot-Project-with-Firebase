@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 298.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 0, 220 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 140.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 140, 220 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 24.6438
+margin_top = 201.228
+margin_right = 127.644
+margin_bottom = 234.228
+text = "Nombre libro"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,156 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://images/otros/whitebc.png" type="Texture" id=1]
+[ext_resource path="res://Logic/Scripts de escenas/Selec_book_dialog.gd" type="Script" id=2]
+[ext_resource path="res://Logic/Scripts de escenas/UploadBook.gd" type="Script" id=3]
+
+[node name="UploadBook" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Tex_BC" type="TextureRect" parent="."]
+margin_left = 1.71478
+margin_top = 0.857391
+margin_right = 319.715
+margin_bottom = 478.857
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="L_nombre" type="LineEdit" parent="."]
+margin_left = 23.4844
+margin_top = 73.2234
+margin_right = 299.484
+margin_bottom = 100.223
+placeholder_text = "ESCRIBE AQUÍ EL NOMBRE DEL LIBRO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L_autor" type="LineEdit" parent="."]
+margin_left = 22.6199
+margin_top = 101.278
+margin_right = 298.62
+margin_bottom = 128.278
+placeholder_text = "ESCRIBE AQUÍ EL AUTOR DEL LIBRO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L_genero" type="LineEdit" parent="."]
+margin_left = 22.742
+margin_top = 128.694
+margin_right = 298.742
+margin_bottom = 155.694
+placeholder_text = "ESCRIBE AQUÍ EL GÉNERO DEL LIBRO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LB_info" type="RichTextLabel" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 22.0
+margin_top = 161.226
+margin_right = 299.0
+margin_bottom = 377.226
+text = "ESCRIBE AQUÍ INFORMACION ADICIONAL "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L_info" type="LineEdit" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 22.0
+margin_top = 160.0
+margin_right = 303.0
+margin_bottom = 339.0
+align = 3
+max_length = 200
+placeholder_text = "TEXTO ADICIONAL QUE DESEES AÑADIR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_Selectimage" type="Button" parent="."]
+margin_left = 89.5413
+margin_top = 383.799
+margin_right = 225.541
+margin_bottom = 421.799
+text = "Seleccionar imagen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_finish" type="Button" parent="."]
+margin_left = 166.651
+margin_top = 432.533
+margin_right = 302.651
+margin_bottom = 470.533
+text = "SUBIR LIBRO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0.101961, 1, 0, 1 )
+margin_left = 30.0
+margin_top = 360.0
+margin_right = 289.0
+margin_bottom = 382.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 109.486
+margin_top = 271.714
+margin_right = 199.486
+margin_bottom = 381.714
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selec_book_dialog" type="FileDialog" parent="."]
+visible = true
+margin_left = 6.64822
+margin_top = 21.0974
+margin_right = 360.648
+margin_bottom = 333.097
+window_title = "Seleccionar imagen"
+mode_overrides_title = false
+mode = 3
+access = 2
+filters = PoolStringArray( "*png", "*jpg", "*jpeg" )
+show_hidden_files = true
+current_dir = "C:/Users/palom/Desktop/GodotBoi/MyEasyBooks Firebase 3.5 no custom"
+current_path = "C:/Users/palom/Desktop/GodotBoi/MyEasyBooks Firebase 3.5 no custom/"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="Selec_book_dialog"]
+position = Vector2( 125.208, 165.097 )
+
+[node name="B_CANCEL" type="Button" parent="Selec_book_dialog/Node2D"]
+margin_right = 92.0
+margin_bottom = 28.0
+text = "CANCELAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="L_info" to="." method="_on_L_info_text_changed"]
+[connection signal="button_down" from="B_Selectimage" to="." method="_on_B_Selectimage_button_down"]
+[connection signal="button_down" from="B_finish" to="." method="_on_B_finish_button_down"]
+[connection signal="dir_selected" from="Selec_book_dialog" to="." method="_on_Selec_book_dialog_dir_selected"]
+[connection signal="file_selected" from="Selec_book_dialog" to="." method="_on_Selec_book_dialog_file_selected"]
+[connection signal="button_down" from="Selec_book_dialog/Node2D/B_CANCEL" to="." method="_on_B_CANCEL_button_down"]

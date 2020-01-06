@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/AppSPR/spr_settings.png" type="Texture" id=1]
+[ext_resource path="res://Logic/Scripts de escenas/Settings.gd" type="Script" id=2]
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 315.0
+margin_bottom = 479.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_explorar" type="Button" parent="."]
+margin_left = 26.0
+margin_top = 439.0
+margin_right = 67.0
+margin_bottom = 477.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_usuario" type="Button" parent="."]
+margin_left = 83.0155
+margin_top = 437.371
+margin_right = 124.016
+margin_bottom = 475.371
+flat = true
+
+[node name="B_pedidos" type="Button" parent="."]
+margin_left = 144.104
+margin_top = 438.185
+margin_right = 185.104
+margin_bottom = 476.185
+flat = true
+
+[node name="B_settings" type="Button" parent="."]
+margin_left = 201.934
+margin_top = 437.371
+margin_right = 242.934
+margin_bottom = 475.371
+flat = true
+
+[node name="B_navigattion" type="Button" parent="."]
+margin_left = 256.0
+margin_top = 436.0
+margin_right = 309.0
+margin_bottom = 478.0
+flat = true
+[connection signal="button_down" from="B_explorar" to="." method="_on_B_explorar_button_down"]
+[connection signal="button_down" from="B_usuario" to="." method="_on_B_usuario_button_down"]
+[connection signal="button_down" from="B_pedidos" to="." method="_on_B_pedidos_button_down"]
+[connection signal="button_down" from="B_settings" to="." method="_on_B_settings_button_down"]
+[connection signal="button_down" from="B_navigattion" to="." method="_on_B_navigattion_button_down"]

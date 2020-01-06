@@ -1,0 +1,224 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Logic/Scripts de escenas/Registro2.gd" type="Script" id=1]
+[ext_resource path="res://images/otros/whitebc.png" type="Texture" id=2]
+[ext_resource path="res://images/AppSPR/detalles.png" type="Texture" id=3]
+[ext_resource path="res://addons/calendar_button/btn_img/btn_64x64_05.png" type="Texture" id=4]
+[ext_resource path="res://addons/calendar_button/btn_img/btn_32x32_03.png" type="Texture" id=5]
+[ext_resource path="res://addons/calendar_button/btn_img/btn_32x32_04.png" type="Texture" id=6]
+[ext_resource path="res://addons/calendar_button/calendar_script.gd" type="Script" id=7]
+[ext_resource path="res://addons/calendar_button/icon.png" type="Texture" id=8]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 49.0
+margin_right = 317.0
+margin_bottom = 500.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 37.0
+margin_bottom = 52.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 10.0
+margin_top = 85.0
+margin_right = 307.0
+margin_bottom = 490.0
+size_flags_stretch_ratio = 0.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 297.0
+margin_bottom = 405.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/BoxContainer"]
+margin_right = 297.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Lb_nombre" type="Label" parent="ScrollContainer/BoxContainer/VBoxContainer"]
+self_modulate = Color( 0, 0, 0, 0.843137 )
+margin_right = 297.0
+margin_bottom = 14.0
+text = "Nombre*"
+
+[node name="L_nombre" type="LineEdit" parent="ScrollContainer/BoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 297.0
+margin_bottom = 42.0
+placeholder_text = "escribe aquí tu nombre"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/BoxContainer"]
+margin_top = 46.0
+margin_right = 297.0
+margin_bottom = 88.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Lb_apellido" type="Label" parent="ScrollContainer/BoxContainer/VBoxContainer2"]
+self_modulate = Color( 0, 0, 0, 0.843137 )
+margin_right = 297.0
+margin_bottom = 14.0
+text = "Apellido*"
+
+[node name="L_apellido" type="LineEdit" parent="ScrollContainer/BoxContainer/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 297.0
+margin_bottom = 42.0
+placeholder_text = "escribe aquí tu apellido"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ScrollContainer/BoxContainer"]
+margin_top = 92.0
+margin_right = 297.0
+margin_bottom = 147.0
+size_flags_vertical = 3
+
+[node name="Lb_Fecha" type="Label" parent="ScrollContainer/BoxContainer/VBoxContainer3"]
+self_modulate = Color( 0, 0, 0, 0.843137 )
+margin_right = 297.0
+margin_bottom = 14.0
+text = "Fecha de nacimiento*"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/BoxContainer/VBoxContainer3"]
+margin_top = 18.0
+margin_right = 297.0
+margin_bottom = 32.0
+
+[node name="Fecha" type="Label" parent="ScrollContainer/BoxContainer/VBoxContainer3/HBoxContainer"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 76.0
+margin_bottom = 14.0
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 6.51
+text = "Tu fecha es:"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="ScrollContainer/BoxContainer"]
+margin_top = 151.0
+margin_right = 297.0
+margin_bottom = 206.0
+size_flags_vertical = 3
+
+[node name="Lb_no" type="Label" parent="ScrollContainer/BoxContainer/VBoxContainer4"]
+self_modulate = Color( 0, 0, 0, 0.843137 )
+margin_right = 297.0
+margin_bottom = 14.0
+text = "Número telefonico*"
+
+[node name="L_No" type="LineEdit" parent="ScrollContainer/BoxContainer/VBoxContainer4"]
+margin_top = 18.0
+margin_right = 297.0
+margin_bottom = 42.0
+placeholder_text = "escribe aquí tu número telefonico"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="ScrollContainer/BoxContainer"]
+margin_top = 210.0
+margin_right = 297.0
+margin_bottom = 265.0
+size_flags_vertical = 3
+
+[node name="Lb_No2" type="Label" parent="ScrollContainer/BoxContainer/VBoxContainer5"]
+self_modulate = Color( 0, 0, 0, 0.843137 )
+margin_right = 297.0
+margin_bottom = 14.0
+text = "Número telefonico 2 (opcional)"
+
+[node name="L_No2" type="LineEdit" parent="ScrollContainer/BoxContainer/VBoxContainer5"]
+margin_top = 18.0
+margin_right = 297.0
+margin_bottom = 42.0
+placeholder_text = "escribe aquí tu número telefonico"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="ScrollContainer/BoxContainer"]
+margin_top = 269.0
+margin_right = 297.0
+margin_bottom = 324.0
+size_flags_vertical = 3
+
+[node name="Lb_correo" type="Label" parent="ScrollContainer/BoxContainer/VBoxContainer6"]
+self_modulate = Color( 0, 0, 0, 0.843137 )
+margin_right = 297.0
+margin_bottom = 14.0
+text = "Correo de contacto opcional"
+
+[node name="L_correo" type="LineEdit" parent="ScrollContainer/BoxContainer/VBoxContainer6"]
+margin_top = 18.0
+margin_right = 297.0
+margin_bottom = 42.0
+placeholder_text = "escribe aquí tu correo"
+
+[node name="Label" type="Label" parent="ScrollContainer/BoxContainer"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_top = 328.0
+margin_right = 297.0
+margin_bottom = 342.0
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="ScrollContainer/BoxContainer"]
+margin_top = 346.0
+margin_right = 297.0
+margin_bottom = 405.0
+size_flags_vertical = 3
+text = "Guardar datos"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_top = 8.0
+margin_right = 317.0
+margin_bottom = 48.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="btn_64x64_05" type="Sprite" parent="."]
+position = Vector2( 259.378, 215.901 )
+texture = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 242.854, 204.417 )
+z_index = -1
+
+[node name="CalendarButton" type="TextureButton" parent="Node2D"]
+margin_right = 60.0
+margin_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_editor_icon": ExtResource( 8 )
+}
+WeekStartsOn = "Sunday"
+LengthWeekdayShortname = "2"
+language = "English"
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="ScrollContainer/BoxContainer/Button2" to="." method="_on_Button2_button_down"]
+[connection signal="date_selected" from="Node2D/CalendarButton" to="." method="_on_CalendarButton_date_selected"]

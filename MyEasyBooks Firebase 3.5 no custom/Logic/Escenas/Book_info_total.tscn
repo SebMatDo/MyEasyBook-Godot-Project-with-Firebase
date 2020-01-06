@@ -1,0 +1,116 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://images/otros/whitebc.png" type="Texture" id=1]
+
+[node name="Book_info_total" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tex_Bc" type="TextureRect" parent="."]
+margin_left = 3.0
+margin_top = 9.0
+margin_right = 321.0
+margin_bottom = 479.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="Tex_image_book" type="TextureRect" parent="."]
+margin_left = 82.7839
+margin_top = 55.5679
+margin_right = 225.784
+margin_bottom = 182.568
+
+[node name="Lb_nombre" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 17.5009
+margin_top = 225.862
+margin_right = 289.501
+margin_bottom = 239.862
+text = "NOMBRE:"
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lb_autor" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 19.8336
+margin_top = 256.187
+margin_right = 291.834
+margin_bottom = 270.187
+text = "AUTOR:"
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lb_genero" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 18.6673
+margin_top = 283.013
+margin_right = 290.667
+margin_bottom = 297.013
+text = "GENERO:"
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lb_cel" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 19.8336
+margin_top = 400.815
+margin_right = 291.834
+margin_bottom = 414.815
+text = "CELULAR:"
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lb_correo" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 19.8336
+margin_top = 426.474
+margin_right = 291.834
+margin_bottom = 440.474
+text = "CORREO:"
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lb_comentario" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 17.1664
+margin_top = 308.682
+margin_right = 289.166
+margin_bottom = 390.682
+text = "COMENTARIO DEL AUTOR:"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lb_creador" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 22.0
+margin_top = 31.0
+margin_right = 303.0
+margin_bottom = 45.0
+text = "PUBLICADO POR:"
+align = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

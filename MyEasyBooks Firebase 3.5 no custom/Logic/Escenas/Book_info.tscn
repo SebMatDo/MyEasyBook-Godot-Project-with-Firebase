@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://images/AppSPR/spr_Buy.png" type="Texture" id=1]
+
+[node name="Book_info" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spr_background" type="TextureRect" parent="."]
+margin_top = -4.0
+margin_right = 319.0
+margin_bottom = 479.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="Lb_contacto" type="Label" parent="."]
+self_modulate = Color( 0.266667, 1, 0, 1 )
+margin_left = 74.2663
+margin_top = 247.742
+margin_right = 242.266
+margin_bottom = 381.742
+text = "INFORMACIÓN DEL LIBRO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spr_book" type="TextureRect" parent="."]
+margin_left = 92.0
+margin_top = 65.0
+margin_right = 226.0
+margin_bottom = 236.0
+
+[node name="Lb_button" type="Label" parent="."]
+margin_left = 50.371
+margin_top = 407.0
+margin_right = 267.371
+margin_bottom = 425.0
+text = "CONTACTAR CON EL PUBLICADOR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 43.0
+margin_top = 401.0
+margin_right = 269.0
+margin_bottom = 427.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,262 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://images/AppSPR/Explorar.png" type="Texture" id=1]
+[ext_resource path="res://images/otros/13-137597_free-open-book-book.png" type="Texture" id=2]
+[ext_resource path="res://Logic/Scripts de escenas/explorar.gd" type="Script" id=3]
+[ext_resource path="res://Logic/Escenas/GenrePopUp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Logic/Escenas/UploadBook.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Logic/Escenas/Book_info_total.tscn" type="PackedScene" id=6]
+
+[node name="SelectBook" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 316.0
+margin_bottom = 477.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 17.0
+margin_top = 43.0
+margin_right = 315.0
+margin_bottom = 427.0
+rect_min_size = Vector2( 0, 5 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 286.0
+margin_bottom = 1412.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="T_genre" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+margin_right = 286.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 350 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="L_genre" type="Label" parent="ScrollContainer/VBoxContainer/T_genre"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 73.7115
+margin_top = 138.002
+margin_right = 193.711
+margin_bottom = 152.002
+text = "Ficción y literatura"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_genre1" type="Button" parent="ScrollContainer/VBoxContainer/T_genre"]
+margin_left = 21.0
+margin_top = 30.0
+margin_right = 262.0
+margin_bottom = 312.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="T_genre2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 354.0
+margin_right = 286.0
+margin_bottom = 704.0
+rect_min_size = Vector2( 0, 350 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="L_genre" type="Label" parent="ScrollContainer/VBoxContainer/T_genre2"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 73.7115
+margin_top = 138.002
+margin_right = 193.711
+margin_bottom = 152.002
+text = "Género 2"
+
+[node name="T_genre3" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 708.0
+margin_right = 286.0
+margin_bottom = 1058.0
+rect_min_size = Vector2( 0, 350 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="L_genre" type="Label" parent="ScrollContainer/VBoxContainer/T_genre3"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 73.7115
+margin_top = 138.002
+margin_right = 193.711
+margin_bottom = 152.002
+text = "Género 3"
+
+[node name="T_genre4" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1062.0
+margin_right = 286.0
+margin_bottom = 1412.0
+rect_min_size = Vector2( 0, 350 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="L_genre" type="Label" parent="ScrollContainer/VBoxContainer/T_genre4"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 73.7115
+margin_top = 138.002
+margin_right = 193.711
+margin_bottom = 152.002
+text = "Género 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_explorar" type="Button" parent="."]
+margin_left = 23.8097
+margin_top = 434.046
+margin_right = 65.8097
+margin_bottom = 468.046
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_usuario" type="Button" parent="."]
+margin_left = 83.0238
+margin_top = 436.789
+margin_right = 125.024
+margin_bottom = 470.789
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_pedidos" type="Button" parent="."]
+margin_left = 144.476
+margin_top = 433.064
+margin_right = 186.476
+margin_bottom = 467.064
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_settings" type="Button" parent="."]
+margin_left = 205.226
+margin_top = 433.679
+margin_right = 244.226
+margin_bottom = 469.679
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_navigation" type="Button" parent="."]
+margin_left = 262.0
+margin_top = 433.0
+margin_right = 303.0
+margin_bottom = 461.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_upload" type="Button" parent="."]
+margin_left = 207.282
+margin_top = 11.2852
+margin_right = 302.282
+margin_bottom = 36.2852
+text = "SUBIR LIBRO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopUPGenero" type="Popup" parent="."]
+margin_right = 316.0
+margin_bottom = 478.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GenrePopUp" parent="PopUPGenero" instance=ExtResource( 4 )]
+
+[node name="B_atras" type="Button" parent="PopUPGenero"]
+margin_left = 15.0
+margin_top = 42.0
+margin_right = 49.0
+margin_bottom = 72.0
+flat = true
+
+[node name="Pop_ChargeBook" type="Popup" parent="PopUPGenero"]
+margin_right = 319.0
+margin_bottom = 478.0
+
+[node name="Book_info_total" parent="PopUPGenero/Pop_ChargeBook" instance=ExtResource( 6 )]
+
+[node name="B_atras_charge" type="Button" parent="PopUPGenero/Pop_ChargeBook"]
+margin_left = 10.5263
+margin_top = 17.8947
+margin_right = 50.5263
+margin_bottom = 54.8947
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopUP_Upload" type="Popup" parent="."]
+margin_right = 315.0
+margin_bottom = 475.0
+
+[node name="UploadBook" parent="PopUP_Upload" instance=ExtResource( 5 )]
+margin_right = 8.0
+margin_bottom = 5.0
+
+[node name="B_cancel" type="Button" parent="PopUP_Upload"]
+margin_left = 15.0
+margin_top = 432.708
+margin_right = 144.0
+margin_bottom = 470.708
+text = "CANCELAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_prueba" type="Button" parent="."]
+margin_left = 89.0
+margin_top = 12.0
+margin_right = 140.0
+margin_bottom = 32.0
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/T_genre/B_genre1" to="." method="_on_B_genre1_button_down"]
+[connection signal="button_down" from="B_explorar" to="." method="_on_B_explorar_button_down"]
+[connection signal="button_down" from="B_usuario" to="." method="_on_B_usuario_button_down"]
+[connection signal="button_down" from="B_pedidos" to="." method="_on_B_pedidos_button_down"]
+[connection signal="button_down" from="B_settings" to="." method="_on_B_settings_button_down"]
+[connection signal="button_down" from="B_navigation" to="." method="_on_B_navigation_button_down"]
+[connection signal="button_down" from="B_upload" to="." method="_on_B_upload_button_down"]
+[connection signal="button_down" from="PopUPGenero/B_atras" to="." method="_on_B_atras_button_down"]
+[connection signal="button_down" from="PopUPGenero/Pop_ChargeBook/B_atras_charge" to="." method="_on_B_atras_charge_button_down"]
+[connection signal="button_down" from="PopUP_Upload/B_cancel" to="." method="_on_B_cancel_button_down"]
+[connection signal="button_down" from="B_prueba" to="." method="_on_B_prueba_button_down"]

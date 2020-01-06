@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Logic/Scripts de escenas/gettear.gd" type="Script" id=1]
+
+[node name="gettear" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3.0
+margin_top = -3.0
+margin_right = -3.0
+margin_bottom = -3.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 319.0
+margin_bottom = 75.0
+text = "gettear imagen"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 1.16635
+margin_top = 390.728
+margin_right = 320.166
+margin_bottom = 465.728
+text = "SUBIR"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 87.3232
+margin_top = 80.1664
+margin_right = 237.323
+margin_bottom = 230.166
+rect_min_size = Vector2( 150, 150 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="."]
+visible = true
+margin_left = 2.0
+margin_top = 267.0
+margin_right = 320.0
+margin_bottom = 397.0
+window_title = "Abrir un Archivo"
+resizable = true
+mode = 0
+access = 2
+show_hidden_files = true
+current_dir = "C:/Users/palom/Desktop/GodotBoi/MyEasyBooks Firebase 3.5 no custom"
+current_path = "C:/Users/palom/Desktop/GodotBoi/MyEasyBooks Firebase 3.5 no custom/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_Button2_button_down"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]

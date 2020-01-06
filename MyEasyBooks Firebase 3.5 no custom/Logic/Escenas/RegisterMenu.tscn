@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Logic/Scripts de escenas/RegisterMenu.gd" type="Script" id=1]
+[ext_resource path="res://images/AppSPR/spr_registro_menu.png" type="Texture" id=2]
+[ext_resource path="res://Logic/Escenas/Popup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/otros/checkmark-24-512.png" type="Texture" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -4.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 320.0
+margin_bottom = 478.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="TextureRect"]
+margin_left = 8.75
+margin_top = 45.1
+margin_right = 68.75
+margin_bottom = 97.1
+flat = true
+
+[node name="Button2" type="Button" parent="TextureRect"]
+margin_left = 97.4774
+margin_top = 325.0
+margin_right = 291.477
+margin_bottom = 360.0
+flat = true
+
+[node name="Popup" parent="." instance=ExtResource( 3 )]
+
+[node name="L_correo" type="LineEdit" parent="."]
+margin_left = 21.0
+margin_top = 183.0
+margin_right = 295.0
+margin_bottom = 207.0
+placeholder_alpha = 0.546
+
+[node name="L_pass" type="LineEdit" parent="."]
+margin_left = 21.0
+margin_top = 236.0
+margin_right = 296.0
+margin_bottom = 260.0
+secret = true
+
+[node name="Button_REG" type="Button" parent="."]
+margin_left = 26.9025
+margin_top = 264.0
+margin_right = 294.902
+margin_bottom = 310.0
+flat = true
+
+[node name="Button_check" type="Button" parent="."]
+margin_left = 25.0
+margin_top = 331.0
+margin_right = 45.0
+margin_bottom = 351.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Button_check"]
+visible = false
+margin_left = 6.0
+margin_top = 2.0
+margin_right = 18.0
+margin_bottom = 19.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 35.0
+margin_top = 364.0
+margin_right = 289.0
+margin_bottom = 395.0
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="button_down" from="TextureRect/Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="TextureRect/Button2" to="." method="_on_Button2_button_down"]
+[connection signal="button_down" from="Button_REG" to="." method="_on_Button_REG_button_down"]
+[connection signal="button_down" from="Button_check" to="." method="_on_Button_check_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

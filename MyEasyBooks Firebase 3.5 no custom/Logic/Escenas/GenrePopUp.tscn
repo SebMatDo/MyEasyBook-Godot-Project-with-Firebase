@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/AppSPR/explorar_selected.png" type="Texture" id=1]
+[ext_resource path="res://Logic/Scripts de escenas/GenrePopUp.gd" type="Script" id=3]
+
+[node name="GenrePopUp" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spr_background" type="TextureRect" parent="."]
+margin_right = 321.0
+margin_bottom = 478.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lb_Genre" type="Label" parent="."]
+self_modulate = Color( 0.407843, 1, 0, 1 )
+margin_left = 59.2771
+margin_top = 54.4263
+margin_right = 256.277
+margin_bottom = 81.4263
+text = "TEXTO DE GENERO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 19.0
+margin_top = 72.0
+margin_right = 317.0
+margin_bottom = 475.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 298.0
+margin_bottom = 403.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
