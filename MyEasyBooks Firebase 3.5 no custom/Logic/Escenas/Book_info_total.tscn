@@ -17,12 +17,20 @@ margin_bottom = 479.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tex_image_book" type="TextureRect" parent="."]
-margin_left = 82.7839
-margin_top = 55.5679
-margin_right = 225.784
-margin_bottom = 182.568
+margin_left = 83.0
+margin_top = 56.0
+margin_right = 230.0
+margin_bottom = 221.0
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Lb_nombre" type="Label" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )

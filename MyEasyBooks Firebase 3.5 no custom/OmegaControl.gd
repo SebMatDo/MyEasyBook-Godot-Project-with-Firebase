@@ -12,13 +12,18 @@ func _ready():
 	room = new_room
 	
 	
+	
 func change_room(c_room):
+	######### ESTA FUNCION SE ENCARGA DE "CAMBIAR" LAS INTANCIAS, BORRANDO LA ANTERIOR ######### 
 	room.queue_free()
 	var new_room = load(c_room).instance() ## SE ABRE LA OTRA INSTANCIA
 	add_child(new_room)
 	room = new_room
 	
+	
+	
 func loading():
+	######### QUE EL USUARIO NO PUEDA INTERACTUAR MIENTRAS ESTA CARGANDO ####
 	$Node2D/Pop_loading.visible=true
 	$Node2D/Pop_loading/Spr_load/AnimationPlayer.play("loading")
 	

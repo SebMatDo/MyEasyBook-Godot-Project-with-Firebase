@@ -111,20 +111,23 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 109.486
-margin_top = 271.714
-margin_right = 199.486
-margin_bottom = 381.714
+margin_left = 106.162
+margin_top = 236.257
+margin_right = 196.162
+margin_bottom = 346.257
+expand = true
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Selec_book_dialog" type="FileDialog" parent="."]
-visible = true
-margin_left = 6.64822
-margin_top = 21.0974
-margin_right = 360.648
-margin_bottom = 333.097
+margin_left = 7.0
+margin_top = 64.0
+margin_right = 359.0
+margin_bottom = 479.0
+rect_min_size = Vector2( 180, 70 )
+rect_scale = Vector2( 0.9, 1 )
 window_title = "Seleccionar imagen"
 mode_overrides_title = false
 mode = 3
@@ -139,12 +142,21 @@ __meta__ = {
 }
 
 [node name="Node2D" type="Node2D" parent="Selec_book_dialog"]
-position = Vector2( 125.208, 165.097 )
+position = Vector2( 205.067, 376.344 )
 
 [node name="B_CANCEL" type="Button" parent="Selec_book_dialog/Node2D"]
 margin_right = 92.0
 margin_bottom = 28.0
 text = "CANCELAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_os" type="Button" parent="."]
+margin_left = 236.997
+margin_top = 3.64821
+margin_right = 305.997
+margin_bottom = 60.6482
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -154,3 +166,4 @@ __meta__ = {
 [connection signal="dir_selected" from="Selec_book_dialog" to="." method="_on_Selec_book_dialog_dir_selected"]
 [connection signal="file_selected" from="Selec_book_dialog" to="." method="_on_Selec_book_dialog_file_selected"]
 [connection signal="button_down" from="Selec_book_dialog/Node2D/B_CANCEL" to="." method="_on_B_CANCEL_button_down"]
+[connection signal="button_down" from="B_os" to="." method="_on_B_os_button_down"]

@@ -1,31 +1,40 @@
 extends Control
 
+##############  	INICIALIZAR VARIABLES ##################### 
 var actual
 var libros
 var temp_info
 onready var pop=$PopUPGenero/GenrePopUp
 
 func _ready():
-	Firebase.get_document("users/%s" % Firebase.user_info.id)
-	Firebase.Omega.loading()
-	yield(Firebase.http,"request_completed")
-	Firebase.Omega.user_info=Firebase.temp_array_request[3]
 	
+	
+	######### DESCARGA LA INFORMACIÓN DEL USUARIO Y LA GUARDA ####
+	if Firebase.Omega.user_info == null:
+		Firebase.get_document("users/%s" % Firebase.user_info.id)
+		Firebase.Omega.loading()
+		yield(Firebase.http,"request_completed")
+		Firebase.Omega.user_info=Firebase.temp_array_request[3]
+	
+	################## GUARDA LA INFORMACIÓN DE TODOS LOS LIBROS ##############
 	Firebase.get_document("Books")
 	Firebase.Omega.loading()
 	yield(Firebase.http,"request_completed")
-
 	libros=Firebase.temp_array_request[3]
+	###### LLAMO LA CANTIDAD ACTUAL PARA SABER CUANTOS LIBROS HAY #########
 	Firebase.get_document("Cantidad/cantidad_actual") ## LLAMO LA CANTIDAD ACTUAL
 	Firebase.Omega.loading()
 	yield(Firebase.http,"request_completed")
 	actual = Firebase.temp_array_request[3]["fields"]["cantidad_actual"]["integerValue"]
 	actual = int(actual)
+	
+	######### LE DIGO A EL NODO POP UP DE CARGAR LIBROS QUE CARGE ######
 	pop.pop=$PopUPGenero/Pop_ChargeBook
 	pop.charge_labels()
 	
 
 func _on_B_explorar_button_down():
+	############# SI SE LE VUELVE A DAR A EXPLORAR, SE VA A LA PARTE SUPERIOR 
 	$ScrollContainer.get_v_scrollbar().value=0
 
 

@@ -35,12 +35,18 @@ func add_vbox():
 	var texture = TextureRect.new()
 	new_vbox.add_child(texture)
 	texture.set_custom_minimum_size(Vector2(140,220))
+	texture.set_expand(true)
+	texture.set_stretch_mode(1)
+	texture.set_size(Vector2(140,220))
 	
 	nocreate+=1
 	
 	var button = load("res://Logic/Escenas/ButtonList.tscn").instance()
 	texture.add_child(button)
-	button.set_custom_minimum_size(Vector2(280,220))
+	button.set_custom_minimum_size(Vector2(110,100))
+	button.set_size(Vector2(110,100))
+	button.rect_position.x+=15
+	button.rect_position.y+=45
 	button.creator=self
 	button.ar_number=nocreate
 	
@@ -71,7 +77,7 @@ func load_book():
 	yield(Firestorage.http,"request_completed")
 	var pool_up = Firestorage.temp_body
 	var image = Image.new()
-	image.create_from_data(256,256,false,5,pool_up)
+	image.create_from_data(int(pat[1]),int(pat[2]),false,int(pat[3]),pool_up)
 	var texture = ImageTexture.new()
 	texture.create_from_image(image)
 	ar_books_created[nocreate]["texture"].texture=texture
@@ -79,6 +85,8 @@ func load_book():
 	emit_signal("end_load")
 	
 func charge_book():
+	if temp_ar>len(ar_textures)-1:
+		return
 	pop.visible=true
 	lb_nombre.text= "Nombre: " +ar_books[temp_ar]["nombre"]["stringValue"]
 	lb_autor.text= "Autor: " + ar_books[temp_ar]["autor"]["stringValue"]
