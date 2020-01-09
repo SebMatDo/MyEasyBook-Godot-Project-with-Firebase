@@ -28,10 +28,6 @@ func _ready():
 	actual = Firebase.temp_array_request[3]["fields"]["cantidad_actual"]["integerValue"]
 	actual = int(actual)
 	
-	######### LE DIGO A EL NODO POP UP DE CARGAR LIBROS QUE CARGE ######
-	pop.pop=$PopUPGenero/Pop_ChargeBook
-	pop.charge_labels()
-	
 
 func _on_B_explorar_button_down():
 	############# SI SE LE VUELVE A DAR A EXPLORAR, SE VA A LA PARTE SUPERIOR 
@@ -54,16 +50,17 @@ func _on_B_navigation_button_down():
 func _on_B_genre1_button_down():
 	$PopUPGenero.visible=true
 	
-	pop.get_node("Lb_Genre").text="Ficción y literatura"
-	if pop.ar_books == []:
-		for i in actual:
+	pop.get_node("Lb_Genre").text="Ficción y literatura" ### NOMBRO EL GENERO
+	if pop.ar_books == []: ## SI LA LISTA DE LIBROS ESTA VACIA: , ESTO SE HACE PARA QUE NO SE CARGUE SIEMPRE QUE SE ABRA
+		for i in actual: ### HAGO UNA LISTA DE LOS GENEROS DE TODOS LOS LIBROS
 			var genero=libros["documents"][i]["fields"]["genero"]["stringValue"]
 			genero=genero.capitalize()
-			print(genero)
-			if  genero.similarity("Ficcion") >=0.5 or genero.similarity("Literatura") >=0.5 :
-				pop.temp_info=libros["documents"][i]["fields"]
-				pop.load_book()
-				yield(pop,"end_load")
+			
+			##### LOS COMPARO Y LOS QUE SEA N SIMILARES SALDRAN A LA LUZ ####
+			if  genero.similarity("Ficcion") >=0.5 or  genero.similarity("Literatura") >=0.5 :
+				pop.temp_info=libros["documents"][i]["fields"] ### LE PASO LA INFO DE CADA LIBRO ENVIADO 
+				pop.load_book() ## SE CARGA EL LIBRO
+				yield(pop,"end_load") ## ESPERA A QUE SE CARGUE EL LIBRO Y COMIENZA A HACER LA OTRA CARGA
 				print("cargado")
 
 
@@ -90,8 +87,13 @@ func _on_B_cancel_button_down():
 
 
 func _on_B_atras_charge_button_down():
-	$PopUPGenero/Pop_ChargeBook.visible=false
+	$Pop_ChargeBook.visible=false
 
 
-func _on_B_prueba_button_down():
-	Firebase.Omega.change_room("res://Logic/Escenas/gettear.tscn")
+func _on_B_search_button_down():
+	$PopUP_Search.visible=true
+	$PopUP_Search/Control_search.libros=libros
+
+
+func _on_B_close_button_down():
+	$PopUP_Search.visible=false

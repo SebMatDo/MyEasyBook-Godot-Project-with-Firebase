@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://images/AppSPR/Explorar.png" type="Texture" id=1]
 [ext_resource path="res://images/otros/13-137597_free-open-book-book.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Logic/Escenas/GenrePopUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Logic/Escenas/UploadBook.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Logic/Escenas/Book_info_total.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Logic/Escenas/Control_search.tscn" type="PackedScene" id=7]
 
 [node name="SelectBook" type="Control"]
 anchor_right = 1.0
@@ -196,6 +197,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="B_search" type="Button" parent="."]
+margin_left = 43.0
+margin_top = 12.0
+margin_right = 144.0
+margin_bottom = 37.0
+text = "Buscar libro"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PopUPGenero" type="Popup" parent="."]
 margin_right = 316.0
 margin_bottom = 478.0
@@ -211,21 +222,6 @@ margin_top = 42.0
 margin_right = 49.0
 margin_bottom = 72.0
 flat = true
-
-[node name="Pop_ChargeBook" type="Popup" parent="PopUPGenero"]
-margin_right = 319.0
-margin_bottom = 478.0
-
-[node name="Book_info_total" parent="PopUPGenero/Pop_ChargeBook" instance=ExtResource( 6 )]
-
-[node name="B_atras_charge" type="Button" parent="PopUPGenero/Pop_ChargeBook"]
-margin_left = 10.5263
-margin_top = 17.8947
-margin_right = 50.5263
-margin_bottom = 54.8947
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PopUP_Upload" type="Popup" parent="."]
 margin_right = 315.0
@@ -244,6 +240,39 @@ text = "CANCELAR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PopUP_Search" type="Popup" parent="."]
+margin_right = 317.0
+margin_bottom = 476.0
+
+[node name="Control_search" parent="PopUP_Search" instance=ExtResource( 7 )]
+
+[node name="B_close" type="Button" parent="PopUP_Search"]
+margin_left = 270.0
+margin_top = 16.0
+margin_right = 300.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 30, 0 )
+size_flags_horizontal = 10
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pop_ChargeBook" type="Popup" parent="."]
+margin_right = 319.0
+margin_bottom = 478.0
+
+[node name="Book_info_total" parent="Pop_ChargeBook" instance=ExtResource( 6 )]
+
+[node name="B_atras_charge" type="Button" parent="Pop_ChargeBook"]
+margin_left = 10.5263
+margin_top = 17.8947
+margin_right = 50.5263
+margin_bottom = 54.8947
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/T_genre/B_genre1" to="." method="_on_B_genre1_button_down"]
 [connection signal="button_down" from="B_explorar" to="." method="_on_B_explorar_button_down"]
 [connection signal="button_down" from="B_usuario" to="." method="_on_B_usuario_button_down"]
@@ -251,6 +280,8 @@ __meta__ = {
 [connection signal="button_down" from="B_settings" to="." method="_on_B_settings_button_down"]
 [connection signal="button_down" from="B_navigation" to="." method="_on_B_navigation_button_down"]
 [connection signal="button_down" from="B_upload" to="." method="_on_B_upload_button_down"]
+[connection signal="button_down" from="B_search" to="." method="_on_B_search_button_down"]
 [connection signal="button_down" from="PopUPGenero/B_atras" to="." method="_on_B_atras_button_down"]
-[connection signal="button_down" from="PopUPGenero/Pop_ChargeBook/B_atras_charge" to="." method="_on_B_atras_charge_button_down"]
 [connection signal="button_down" from="PopUP_Upload/B_cancel" to="." method="_on_B_cancel_button_down"]
+[connection signal="button_down" from="PopUP_Search/B_close" to="." method="_on_B_close_button_down"]
+[connection signal="button_down" from="Pop_ChargeBook/B_atras_charge" to="." method="_on_B_atras_charge_button_down"]

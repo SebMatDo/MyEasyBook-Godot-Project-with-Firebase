@@ -50,7 +50,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	temp_body = body ###### LO DEJO FUERA DEL ARRAY PARA SER USADO MAS FACIL
 	temp = [temp_result, temp_response_code, temp_headers]
 	
-func get_document_storage (path : String) -> void:
+func get_document_storage (path : String ) -> void:
 	###### UNA PETICION AL SERVIDOR SIMPLE ###### 
 	var url := STORAGE_URL + path
 	print(url)
@@ -75,13 +75,4 @@ func _get_requested_headers():
 		"Authorization: Bearer %s" % Firebase.user_info.token
 	])
 
-func info_end():
-	### Esto se hará al emitir la señal de que terminó la peticion para subir la imagen ####
-	print ( " info ")
 
-func _process(_delta):
-	## intento de saber el status actual del cliente ##
-	httpc.poll()
-	if httpc.get_status() != STATUS:
-		STATUS=httpc.get_status()
-		print("STATUS" , STATUS)

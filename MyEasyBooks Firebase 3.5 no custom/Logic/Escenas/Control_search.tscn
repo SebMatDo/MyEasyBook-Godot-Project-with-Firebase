@@ -1,0 +1,180 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://images/otros/whitebc.png" type="Texture" id=1]
+[ext_resource path="res://images/otros/computer-icons-world-wide-web-iconfinder-search-simple-png.jpg" type="Texture" id=2]
+[ext_resource path="res://Logic/Scripts de escenas/Control_search.gd" type="Script" id=3]
+
+[node name="Control_search" type="Control"]
+margin_right = 319.0
+margin_bottom = 478.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tex_bc" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 15.0
+margin_top = 16.0
+margin_right = 300.0
+margin_bottom = 446.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB_container" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 285.0
+margin_bottom = 430.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HB_close" type="HBoxContainer" parent="ScrollContainer/VB_container"]
+margin_right = 285.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_horizontal = 3
+
+[node name="HB_bar" type="HBoxContainer" parent="ScrollContainer/VB_container"]
+margin_top = 44.0
+margin_right = 285.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 35 )
+size_flags_horizontal = 3
+
+[node name="L_bar" type="LineEdit" parent="ScrollContainer/VB_container/HB_bar"]
+margin_top = 12.0
+margin_right = 220.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 220, 25 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+placeholder_text = "ESCRIBA AQUI SU BUSQUEDA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tex_lupa" type="TextureRect" parent="ScrollContainer/VB_container/HB_bar"]
+margin_left = 224.0
+margin_right = 274.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_lupa" type="Button" parent="ScrollContainer/VB_container/HB_bar/Tex_lupa"]
+margin_right = 51.0
+margin_bottom = 50.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HB_filters" type="HBoxContainer" parent="ScrollContainer/VB_container"]
+margin_top = 98.0
+margin_right = 285.0
+margin_bottom = 122.0
+
+[node name="chek1" type="CheckBox" parent="ScrollContainer/VB_container/HB_filters"]
+margin_right = 24.0
+margin_bottom = 24.0
+pressed = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lb_check1" type="Label" parent="ScrollContainer/VB_container/HB_filters"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 120, 14 )
+text = "Nombre"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chek2" type="CheckBox" parent="ScrollContainer/VB_container/HB_filters"]
+margin_left = 152.0
+margin_right = 176.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lb_check2" type="Label" parent="ScrollContainer/VB_container/HB_filters"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 180.0
+margin_top = 5.0
+margin_right = 215.0
+margin_bottom = 19.0
+text = "Autor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HB_filters2" type="HBoxContainer" parent="ScrollContainer/VB_container"]
+margin_top = 126.0
+margin_right = 285.0
+margin_bottom = 150.0
+
+[node name="chek3" type="CheckBox" parent="ScrollContainer/VB_container/HB_filters2"]
+margin_right = 24.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lb_check3" type="Label" parent="ScrollContainer/VB_container/HB_filters2"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 148.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 120, 14 )
+text = "Genero"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chek4" type="CheckBox" parent="ScrollContainer/VB_container/HB_filters2"]
+margin_left = 152.0
+margin_right = 176.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lb_check4" type="Label" parent="ScrollContainer/VB_container/HB_filters2"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 180.0
+margin_top = 5.0
+margin_right = 249.0
+margin_bottom = 19.0
+text = "Disponible"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxLibros" type="VBoxContainer" parent="ScrollContainer/VB_container"]
+margin_top = 154.0
+margin_right = 285.0
+margin_bottom = 430.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+[connection signal="pressed" from="ScrollContainer/VB_container/HB_bar/Tex_lupa/B_lupa" to="." method="_on_B_lupa_pressed"]
+[connection signal="pressed" from="ScrollContainer/VB_container/HB_filters/chek1" to="." method="_on_chek1_pressed"]
+[connection signal="pressed" from="ScrollContainer/VB_container/HB_filters/chek2" to="." method="_on_chek2_pressed"]
+[connection signal="pressed" from="ScrollContainer/VB_container/HB_filters2/chek3" to="." method="_on_chek3_pressed"]
+[connection signal="button_down" from="ScrollContainer/VB_container/HB_filters2/chek4" to="." method="_on_chek4_button_down"]
